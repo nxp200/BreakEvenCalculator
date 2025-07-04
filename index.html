@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Break-Even Point Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Break-Even Point Calculator</h1>
+            <p>Calculate how many units you need to sell to break even</p>
+        </header>
+        
+        <main>
+            <div class="calculator">
+                <div class="input-group">
+                    <label for="fixed-costs">Fixed Costs ($)</label>
+                    <input type="number" id="fixed-costs" placeholder="Enter fixed costs" min="0" step="0.01">
+                    <span class="error" id="fixed-costs-error"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="variable-cost">Variable Cost per Unit ($)</label>
+                    <input type="number" id="variable-cost" placeholder="Enter variable cost per unit" min="0" step="0.01">
+                    <span class="error" id="variable-cost-error"></span>
+                </div>
+                
+                <div class="input-group">
+                    <label for="selling-price">Selling Price per Unit ($)</label>
+                    <input type="number" id="selling-price" placeholder="Enter selling price per unit" min="0" step="0.01">
+                    <span class="error" id="selling-price-error"></span>
+                </div>
+                
+                <div class="button-group">
+                    <button id="show-example-btn">Show Example</button>
+                    <button id="calculate-btn">Calculate Break-Even Point</button>
+                </div>
+                
+                <div class="result-container" id="result-container">
+                    <h2>Break-Even Point</h2>
+                    <div class="result" id="result">
+                        <span id="result-value">-</span>
+                        <span>units</span>
+                    </div>
+                    <p id="result-message"></p>
+                </div>
+            </div>
+            
+            <div class="formula-container">
+                <h3>Formula</h3>
+                <p class="formula">Break-Even Point = Fixed Costs / (Selling Price - Variable Cost)</p>
+            </div>
+            
+            <div class="chart-container">
+                <h3>Visual Representation</h3>
+                <canvas id="break-even-chart"></canvas>
+                <p class="chart-explanation">The break-even point is where the revenue line (green) intersects with the total cost line (red). At this point, your business neither makes a profit nor incurs a loss.</p>
+            </div>
+        </main>
+        
+        <footer>
+            <p>© 2025 Break-Even Calculator</p>
+        </footer>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
